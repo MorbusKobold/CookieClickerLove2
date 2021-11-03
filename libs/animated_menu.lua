@@ -84,7 +84,7 @@ end
 function arrow_cursor.click(bool)
     if bool then
         arrow_cursor.clicked = true
-        game.clickRate = game.clickRate + 1
+        game.clickRate = game.clickRate + 100000
     else
         arrow_cursor.clicked = false
     end
@@ -134,7 +134,7 @@ end
 function arrow_production.click(bool)
     if bool then
         arrow_production.clicked = true
-        game.cookieRate = game.cookieRate + 1
+        game.cookieRate = game.cookieRate + 100000
     else
         arrow_production.clicked = false
     end
