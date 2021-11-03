@@ -140,4 +140,54 @@ function arrow_production.click(bool)
     end
 end
 
+-- ARROW_PRODUCTION
+function arrow_production.update(dt)
+    if collision.pointInRect(mouse.x, mouse.y, arrow_production.x, arrow_production.y, 250, 50) then
+        arrow_production.hover(true)
+        if arrow_production.clicked then
+            arrow_production.color = {0.8, 0.8, 0.8, 0.5}
+        end
+    else
+        arrow_production.hover(false)
+    end
+    arrow_production.click(false)
+end
+
+function arrow_production.draw()
+    love.graphics.setColor(arrow_production.color)
+    love.graphics.draw(images.arrow_production, arrow_production.x, arrow_production.y, 0, arrow_production.sx, arrow_production.sy)
+    love.graphics.setColor(1, 1, 1, 1)
+end
+
+function arrow_production.mousepressed(x, y, button)
+    if button == 1 and collision.pointInRect(x, y, arrow_production.x, arrow_production.y, 250, 50) then
+        arrow_production.click(true)
+    end
+end
+
+function arrow_production.hover(bool)
+    if bool then
+        if arrow_production.x > 550 then
+            arrow_production.x = arrow_production.x - arrow_production.speed
+        end
+        arrow_production.color = {1, 1, 1, 1}
+        arrow_production.hovered = true
+    else
+        if arrow_production.x < 750 then
+            arrow_production.x = arrow_production.x + arrow_production.speed
+        end
+        arrow_production.color = {1, 1, 1, 0.6}
+        arrow_production.hovered = true
+    end
+end
+
+function arrow_production.click(bool)
+    if bool then
+        arrow_production.clicked = true
+        game.cookieRate = game.cookieRate + 100000
+    else
+        arrow_production.clicked = false
+    end
+end
+
 return animated_menu

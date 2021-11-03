@@ -5,10 +5,7 @@ local game = {
 }
 
 function game.update()
-    if game.cookies >= 1000000 then
-        --game.cookies = 0
-        game.cookieRate = game.cookieRate * 1.09
-    end
+    
 end
 
 return game
