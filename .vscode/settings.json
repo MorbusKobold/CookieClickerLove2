@@ -1,4 +1,13 @@
 {
+    // DAS HIER IS WICHTIG!!!! fügt den play button hinzu
+      "activitusbar.views": [
+      
+          {
+              "name": "command.pixelbyte.love2d.run",
+              "codicon": "play",
+  
+          }
+      ],
     "Lua.runtime.version": "LuaJIT",
     "Lua.workspace.library": [
         "${3rd}/love2d/library"
