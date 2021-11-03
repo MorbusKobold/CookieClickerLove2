@@ -12,12 +12,16 @@ debug = true
 t = false
 hasCollision = false
 
-
+cursorQuad = nil
 
 function love.load()
     window.load()
+
     input.load()
+
     images.load()
+    cursorQuad = love.graphics.newQuad(0,0, 48,48, images.tileset:getDimensions())
+
     cookie.load(images.cookie)
     background = {
         sx = window.WIDTH/images.background:getWidth(),
@@ -66,8 +70,8 @@ function love.draw()
         love.graphics.setColor(circle.color)
         love.graphics.circle("line",circle.x,circle.y,circle.radius)
         love.graphics.setColor(1,1,1)
-        love.graphics.print("clickRate: " .. game.clickRate,0,16)
-        love.graphics.print("cookieRate: " .. math.floor(game.cookieRate),0,32)
+        love.graphics.print("clickMultiplier: " .. game.clickMultiplier,0,16)
+        love.graphics.print("autoClickRate(): " .. math.floor(game.autoClickRate()),0,32)
         love.graphics.print("rainingCookies: " .. #cookie.rainingCookies,0,48)
         love.graphics.print("Fps: " .. love.timer.getFPS(),0,64)
         love.graphics.print("numberIndex: " .. numberHandler.i,0,80)
@@ -85,7 +89,7 @@ end
 
 function love.mousepressed(x, y, button)
     if button == 1 and collision.pointInCircle(mouse.x,mouse.y,circle.x,circle.y,circle.radius) then
-        game.cookies = game.cookies + game.clickRate
+        game.cookies = game.cookies + game.clickMultiplier
         cookie.click(true)
     end
 

@@ -20,12 +20,10 @@ function input.keypressed(key)
         t = not t
     end
     if key == input.key_minus then
-        game.clickRate = game.clickRate - 1
-        game.cookieRate = game.cookieRate - 1
+        game.clickMultiplier = game.clickMultiplier - 1
     end
     if key == input.key_plus then
-        game.clickRate = game.clickRate + 1
-        game.cookieRate = game.cookieRate + 1
+        game.clickMultiplier = game.clickMultiplier + 1
     end
     if key == input.key_reset then
         game.cookies = 0

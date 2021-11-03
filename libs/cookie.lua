@@ -12,7 +12,7 @@ function cookie.load(image)
 end
 
 function cookie.update(dt)
-    game.cookies = game.cookies + game.cookieRate * dt
+    game.cookies = game.cookies + game.autoClickRate() * dt
 end
 
 function cookie.draw()
@@ -38,7 +38,7 @@ function cookie.createText(cookies)
     text.x = mouse.x
     text.y = mouse.y - 16
     text.color = {1,1,1,1}
-    text.string = "+ " .. game.clickRate
+    text.string = "+ " .. game.clickMultiplier
     table.insert(numberString, text)
 end
 
