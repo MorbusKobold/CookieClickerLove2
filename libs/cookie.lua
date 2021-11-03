@@ -63,8 +63,9 @@ function cookie.drawText()
     if length < 3 then
         length = 10
     end
-    love.graphics.setColor(0.5,0.5,0.5,0.5)
-    love.graphics.rectangle("fill",window.WIDTH/2-300,64-25,600,80)
+    love.graphics.setColor(1,1,1,0.5)
+    --love.graphics.rectangle("fill",window.WIDTH/2-300,64-25,600,80)
+    love.graphics.draw(images.number_background, window.WIDTH/2-300, 64-25)
     love.graphics.setColor(1,0,0)
     love.graphics.print("Cookies: ",window.WIDTH/2-350+100,64)
     love.graphics.setColor(1,1,1)

@@ -7,6 +7,7 @@ function images.load()
     images.tileset = love.graphics.newImage("images/tileset.png")
     images.arrow_cursor = love.graphics.newImage("images/arrow_cursor.png")
     images.arrow_production = love.graphics.newImage("images/arrow_production.png")
+    images.number_background = love.graphics.newImage("images/number_background.png")
 end
 
 return images
